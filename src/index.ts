@@ -6,7 +6,7 @@ import { create } from './command/create'
 const program = new Command();
 
 program
-  .name('tt')
+  .name('lly')
   .version(version, '-v, --version');
 
 program

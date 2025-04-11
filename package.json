@@ -1,5 +1,5 @@
 {
-  "name": "tt-cli",
+  "name": "lly-cli",
   "version": "1.0.0",
   "main": "index.js",
   "scripts": {
@@ -7,7 +7,7 @@
     "build": "rollup -c rollup.config.js --bundleConfigAsCjs"
   },
   "bin": {
-    "tt": "bin/index.js"
+    "lly": "bin/index.js"
   },
   "files": [
     "dist",
@@ -15,9 +15,9 @@
     "README.md"
   ],
   "keywords": ["Vite", "Vue3", "TypeScript", "element-plus"],
-  "author": "tt",
+  "author": "lly",
   "license": "ISC",
-  "description": "tt-cli 脚手架",
+  "description": "lly-cli 脚手架",
   "devDependencies": {
     "@inquirer/prompts": "^7.4.1",
     "@rollup/plugin-commonjs": "^28.0.3",

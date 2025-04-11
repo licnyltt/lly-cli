@@ -1,6 +1,6 @@
-# tt-cli
+# lly-cli
 
-![Npm 版本](https://img.shields.io/badge/tt-cli_v0.0.1-green)
+![Npm 版本](https://img.shields.io/badge/lly-cli_v0.0.1-green)
 
 ## 📚 简介
 
@@ -13,19 +13,19 @@
 ## 🍭 安装
 
 ```bash
-npm install tt-cli -g
+npm install lly-cli -g
 ```
 
 ## 🚩 使用
 
 ```bash
 # 使用模板创建项目
-tt create
+lly create
 
 # 执行项目文件夹名称并选择模板创建新项目
-tt create [projeactName]
+lly create [projeactName]
 
 # 查看脚手架版本
-tt -v
-tt --version
+lly -v
+lly --version
 ```
