@@ -14,7 +14,12 @@
     "bin",
     "README.md"
   ],
-  "keywords": ["Vite", "Vue3", "TypeScript", "element-plus"],
+  "keywords": [
+    "Vite",
+    "Vue3",
+    "TypeScript",
+    "element-plus"
+  ],
   "author": "lly",
   "license": "ISC",
   "description": "lly-cli 脚手架",
@@ -24,9 +29,12 @@
     "@rollup/plugin-json": "^6.1.0",
     "@rollup/plugin-node-resolve": "^16.0.1",
     "@rollup/plugin-terser": "^0.4.4",
+    "@types/lodash": "^4.17.16",
     "@types/node": "^22.14.0",
-    "chalk": "^5.4.1",
+    "axios": "^1.8.4",
+    "chalk": "^4.1.2",
     "commander": "^13.1.0",
+    "lodash": "^4.17.21",
     "progress-estimator": "^0.3.1",
     "rollup": "^4.39.0",
     "rollup-plugin-node-externals": "^8.0.0",

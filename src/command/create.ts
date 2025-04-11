@@ -2,6 +2,11 @@ import { select, input } from '@inquirer/prompts';
 import { clone } from '../utils/clone'
 import path from 'path'
 import fs from 'fs'
+import { version, name } from '../../package.json'
+import axios, { AxiosResponse } from 'axios'
+import { gt } from 'lodash'
+import chalk from 'chalk';
+
 
 
 
@@ -48,8 +53,34 @@ export function isOverWrite(projectName: string) {
             }
         ]
     })
-
 }
+
+export async function getNpmInfo(name: string) {
+    const npmUrl = `https://registry.npmjs.org/${name}`
+    let res = {}
+    try {
+        res = await axios.get(npmUrl)
+    } catch (error) {
+        console.error(error)
+    }
+    return res
+}
+
+export async function getNpmLatestVersion(name: string) {
+    const { data } = (await getNpmInfo(name)) as AxiosResponse
+    return data['dist-tags'].latest
+}
+
+export async function checkVersion(name: string, version: string) {
+    const latestVersion = await getNpmLatestVersion(name)
+    const needUpdate = gt(latestVersion, version)
+    if (needUpdate) {
+        console.warn(`检查到lly最新版本：${chalk.blackBright(latestVersion)}，当前版本是${chalk.blackBright(version)}`)
+        console.log(`可使用：${chalk.yellow('npm install lly@latest')}，或者使用：${chalk.yellow('lly update')}更新`)
+    }
+    return needUpdate
+}
+
 
 export async function create(projectName?: string) {
     // 初始化模板列表
@@ -65,6 +96,9 @@ export async function create(projectName?: string) {
     if (!projectName) {
         projectName = await input({ message: '请输入项目名称' })
     }
+
+    // 检查版本
+    await checkVersion(name, version)
 
     // 如果已存在，提示是否覆盖
     const filePath = path.resolve(process.cwd(), projectName)

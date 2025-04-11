@@ -1,6 +1,6 @@
 import { simpleGit, SimpleGit, SimpleGitOptions } from 'simple-git';
 import createLogger from 'progress-estimator'
-import chalk from 'chalk'
+import chalk from 'chalk';
 
 const gitOptions: Partial<SimpleGitOptions> = {
     baseDir: process.cwd(),
@@ -27,7 +27,7 @@ export async function clone(url: string, projectName: string, options: string[])
         console.log()
         console.log(chalk.green('代码下载成功'))
         console.log(chalk.blackBright('======================================'))
-        console.log(chalk.blackBright('====== 欢迎使用 lly-cli 脚手架 ========'))
+        console.log(chalk.blackBright('====== 欢迎使用 lly-cli 脚手架 ======='))
         console.log(chalk.blackBright('======================================'))
         console.log()
         console.log()
