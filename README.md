@@ -8,7 +8,7 @@
 
 ## 📕 模板
 
-- ✅ 快速生成Vue3+TypeScript+Vite+ElementPlus+Pinia+Axios+Mock的模板
+- ✅ 快速生成 [Vue3+TypeScript+Vite+ElementPlus+Pinia+Axios+Mock的模板](https://gitee.com/codelyty/cli-template)
 
 ## 🍭 安装
 
