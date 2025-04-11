@@ -7,9 +7,6 @@ import axios, { AxiosResponse } from 'axios'
 import { gt } from 'lodash'
 import chalk from 'chalk';
 
-
-
-
 export interface TemplateInfo {
     name: string // 模板名称，
     downloadUrl: string // 模板下载地址，
@@ -76,7 +73,7 @@ export async function checkVersion(name: string, version: string) {
     const needUpdate = gt(latestVersion, version)
     if (needUpdate) {
         console.warn(`检查到lly最新版本：${chalk.blackBright(latestVersion)}，当前版本是${chalk.blackBright(version)}`)
-        console.log(`可使用：${chalk.yellow('npm install lly@latest')}，或者使用：${chalk.yellow('lly update')}更新`)
+        console.log(`可使用：${chalk.yellow('npm install lly-cli@latest -g')}，或者使用：${chalk.yellow('lly update')}更新`)
     }
     return needUpdate
 }

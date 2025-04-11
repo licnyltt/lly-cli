@@ -2,6 +2,7 @@ import { simpleGit, SimpleGit, SimpleGitOptions } from 'simple-git';
 import createLogger from 'progress-estimator'
 import chalk from 'chalk';
 
+
 const gitOptions: Partial<SimpleGitOptions> = {
     baseDir: process.cwd(),
     binary: 'git',
