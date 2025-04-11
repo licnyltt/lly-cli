@@ -6,10 +6,18 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "build": "rollup -c rollup.config.js --bundleConfigAsCjs"
   },
-  "keywords": [],
-  "author": "",
+  "bin": {
+    "tt": "bin/index.js"
+  },
+  "files": [
+    "dist",
+    "bin",
+    "README.md"
+  ],
+  "keywords": ["Vite", "Vue3", "TypeScript", "element-plus"],
+  "author": "tt",
   "license": "ISC",
-  "description": "",
+  "description": "tt-cli 脚手架",
   "devDependencies": {
     "@inquirer/prompts": "^7.4.1",
     "@rollup/plugin-commonjs": "^28.0.3",
