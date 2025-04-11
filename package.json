@@ -1,0 +1,29 @@
+{
+  "name": "tt-cli",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "rollup -c rollup.config.js --bundleConfigAsCjs"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "description": "",
+  "devDependencies": {
+    "@inquirer/prompts": "^7.4.1",
+    "@rollup/plugin-commonjs": "^28.0.3",
+    "@rollup/plugin-json": "^6.1.0",
+    "@rollup/plugin-node-resolve": "^16.0.1",
+    "@rollup/plugin-terser": "^0.4.4",
+    "@types/node": "^22.14.0",
+    "chalk": "^5.4.1",
+    "commander": "^13.1.0",
+    "progress-estimator": "^0.3.1",
+    "rollup": "^4.39.0",
+    "rollup-plugin-node-externals": "^8.0.0",
+    "rollup-plugin-typescript2": "^0.36.0",
+    "simple-git": "^3.27.0",
+    "typescript": "^5.8.3"
+  }
+}
