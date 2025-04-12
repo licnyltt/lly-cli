@@ -29,13 +29,11 @@
     "@rollup/plugin-json": "^6.1.0",
     "@rollup/plugin-node-resolve": "^16.0.1",
     "@rollup/plugin-terser": "^0.4.4",
-    "@types/figlet": "^1.7.0",
     "@types/lodash": "^4.17.16",
     "@types/node": "^22.14.0",
     "axios": "^1.8.4",
     "chalk": "^4.1.2",
     "commander": "^13.1.0",
-    "figlet": "^1.8.1",
     "lodash": "^4.17.21",
     "log-symbols": "^7.0.0",
     "ora": "^8.2.0",
@@ -45,5 +43,8 @@
     "rollup-plugin-typescript2": "^0.36.0",
     "simple-git": "^3.27.0",
     "typescript": "^5.8.3"
+  },
+  "dependencies": {
+    "figlet": "^1.8.1"
   }
 }
