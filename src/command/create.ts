@@ -6,6 +6,7 @@ import { version, name } from '../../package.json'
 import axios, { AxiosResponse } from 'axios'
 import { gt } from 'lodash'
 import chalk from 'chalk';
+import { log } from '../utils/log';
 
 export interface TemplateInfo {
     name: string // 模板名称，
@@ -19,7 +20,7 @@ export const templates: Map<string, TemplateInfo> = new Map([
         'Vite-Vue3-TypeScript-template1',
         {
             name: 'Vite-Vue3-TypeScript-template1',
-            downloadUrl: 'git@gitee.com:codelyty/cli-template.git',
+            downloadUrl: 'https://gitee.com/codelyty/cli-template.git',
             description: 'Vue3技术栈开发模板',
             branch: 'master'
         }
@@ -28,7 +29,7 @@ export const templates: Map<string, TemplateInfo> = new Map([
         'Vite-Vue3-TypeScript-template2',
         {
             name: 'Vite-Vue3-TypeScript-template2',
-            downloadUrl: 'git@gitee.com:codelyty/cli-template.git',
+            downloadUrl: 'https://gitee.com/codelyty/cli-template.git',
             description: 'Vue3技术栈开发模板',
             branch: 'master'
         }
@@ -36,7 +37,7 @@ export const templates: Map<string, TemplateInfo> = new Map([
 ])
 
 export function isOverWrite(projectName: string) {
-    console.warn(`${projectName}文件已存在`)
+    log.warning(`${projectName}文件已存在`)
     return select({
         message: '是否覆盖？',
         choices: [
@@ -58,7 +59,7 @@ export async function getNpmInfo(name: string) {
     try {
         res = await axios.get(npmUrl)
     } catch (error) {
-        console.error(error)
+        log.error(error)
     }
     return res
 }
@@ -72,8 +73,8 @@ export async function checkVersion(name: string, version: string) {
     const latestVersion = await getNpmLatestVersion(name)
     const needUpdate = gt(latestVersion, version)
     if (needUpdate) {
-        console.warn(`检查到lly最新版本：${chalk.blackBright(latestVersion)}，当前版本是${chalk.blackBright(version)}`)
-        console.log(`可使用：${chalk.yellow('npm install lly-cli@latest -g')}，或者使用：${chalk.yellow('lly update')}更新`)
+        log(`检查到lly最新版本：${chalk.blackBright(latestVersion)}，当前版本是${chalk.blackBright(version)}`)
+        log(`可使用：${chalk.yellow('npm install lly-cli@latest -g')}，或者使用：${chalk.yellow('lly update')}更新`)
     }
     return needUpdate
 }

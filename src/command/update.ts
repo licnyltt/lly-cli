@@ -1,6 +1,7 @@
 import chalk from "chalk";
 import ora from "ora"
 import process from "child_process";
+import { log } from "../utils/log";
 
 
 const spinner = ora({
@@ -18,9 +19,9 @@ export async function update() {
     await process.exec('npm install lly-cli@latest -g', (error) => {
         spinner.stop()
         if(error){
-            console.log(chalk.red(error))
+            log.error(chalk.red(error))
         }else{
-            console.log(chalk.green('更新成功'))
+            log.success(chalk.green('更新成功'))
         }
     })
 }
